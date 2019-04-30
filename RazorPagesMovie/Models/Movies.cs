@@ -9,5 +9,7 @@ namespace RazorPagesMovie.Models
         public string Title { get; set; }
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
+        
+        
     }
 }
