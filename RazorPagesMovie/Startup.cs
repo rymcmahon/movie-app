@@ -1,4 +1,6 @@
 using System;
+using RazorPagesMovie.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,7 +33,9 @@ namespace RazorPagesMovie
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddDbContext<RazorPagesMovieContext>(options =>
+        options.UseSqlite(Configuration.GetConnectionString("MovieContext")));
+        
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
